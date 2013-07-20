@@ -1,0 +1,31 @@
+%h3
+  Page Product
+%br
+= link_to 'Add Product' , new_product_path() , class: "btn btn-success"          
+%br
+%br
+
+%table.table.table-hover
+  %th= "Product"
+  %th= "Price"
+  %th= "Description"
+  %th= "Path Image"
+  %th= "Top Product"
+  %th= "Actions"
+  - @products.each do |product|
+    %tr  
+      %td= product.name
+      %td= product.price
+      %td= product.description
+      %td= product.path_img
+      %td= product.top_product
+      %td
+        = link_to "Edit" , edit_product_path(product.id) , class: "btn"
+        = link_to "Delete" , product_path(product.id) , class: "btn btn-danger" , method: :delete , data: { confirm: "Are you sure?"}
+
+
+
+
+
+
+

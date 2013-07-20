@@ -1,0 +1,14 @@
+= form_for(@brands) do |f|
+  .field
+    = f.label :name
+    = f.text_field :name
+    %br/
+    = f.label :description
+    = f.text_field :description
+    %br/
+    = f.label :path_img
+    = f.text_field :path_img
+    %br/
+
+    = f.submit "Save" , class: "btn btn-success"
+    = link_to 'Cancel' , brands_path() , class: "btn"

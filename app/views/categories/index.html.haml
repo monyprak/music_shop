@@ -1,0 +1,27 @@
+%h3
+  Page Category
+%br
+= link_to 'Add Category' , new_category_path() , class: "btn btn-success"          
+%br
+%br
+
+%table.table.table-hover
+  %th= "Categories"
+  %th= "Description"
+  %th= "Path Image"
+  %th= "Actions"
+  - @categories.each do |category|
+    %tr  
+      %td= category.name
+      %td= category.description
+      %td= category.path_img
+      %td
+        = link_to "Edit" , edit_category_path(category.id) , class: "btn"
+        = link_to "Delete" , category_path(category.id) , class: "btn btn-danger" , method: :delete , data: { confirm: "Are you sure?"}
+
+
+
+
+
+
+

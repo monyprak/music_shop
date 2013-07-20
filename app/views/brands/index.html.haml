@@ -1,0 +1,27 @@
+%h3
+  Page Brand
+%br
+= link_to 'Add Brand' , new_brand_path() , class: "btn btn-success"          
+%br
+%br
+
+%table.table.table-hover
+  %th= "Brand"
+  %th= "Description"
+  %th= "Path Image"
+  %th= "Actions"
+  - @brands.each do |brand|
+    %tr  
+      %td= brand.name
+      %td= brand.description
+      %td= brand.path_img
+      %td
+        = link_to "Edit" , edit_brand_path(brand.id) , class: "btn"
+        = link_to "Delete" , brand_path(brand.id) , class: "btn btn-danger" , method: :delete , data: { confirm: "Are you sure?"}
+
+
+
+
+
+
+

@@ -1,0 +1,20 @@
+= form_for(@products) do |f|
+  .field
+    = f.label :name
+    = f.text_field :name
+    %br/
+    = f.label :price
+    = f.text_field :price
+    %br/
+    = f.label :description
+    = f.text_field :description
+    %br/
+    = f.label :path_img
+    = f.text_field :path_img
+    %br/
+    = f.label :top_product
+    = f.check_box :top_product
+    %br/
+
+    = f.submit "Save" , class: "btn btn-success"
+    = link_to 'Cancel' , products_path() , class: "btn"   
