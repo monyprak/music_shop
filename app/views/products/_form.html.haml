@@ -1,20 +1,21 @@
-= form_for(@products) do |f|
+= form_for(@product) do |f|
   .field
     = f.label :name
     = f.text_field :name
-    %br/
+    %br
     = f.label :price
     = f.text_field :price
-    %br/
+    %br
     = f.label :description
     = f.text_field :description
-    %br/
+    %br
     = f.label :path_img
     = f.text_field :path_img
-    %br/
+    %br
     = f.label :top_product
     = f.check_box :top_product
-    %br/
-
+    %br
+    = f.select "category_id", options_from_collection_for_select(@categories, "id", "name"), prompt: "Select something"
+    %br
     = f.submit "Save" , class: "btn btn-success"
     = link_to 'Cancel' , products_path() , class: "btn"   

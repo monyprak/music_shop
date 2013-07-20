@@ -5,15 +5,16 @@ class ProductsController < ApplicationController
   end
 
   def new
-    @products = Product.new
+    @product = Product.new
+    @categories = Category.all
   end
 
   
   def create
-    @products = Product.new(params[:product])
+    @product = Product.new(params[:product])
 
     respond_to do |format|
-      if @products.save
+      if @product.save
         format.html { redirect_to products_path(), notice: 'Category was successfully created.' }
       else
         format.html { render action: "new" }
@@ -23,7 +24,8 @@ class ProductsController < ApplicationController
 
   
   def edit
-    @products = Product.find(params[:id])
+    @product = Product.find(params[:id])
+    @categories = Category.all
   end
 
 
@@ -33,11 +35,11 @@ class ProductsController < ApplicationController
   
   
   def update
-    @products= Product.find(params[:id])
+    @product= Product.find(params[:id])
 
     respond_to do |format|
-      if @products.update_attributes(params[:product])
-        format.html { redirect_to products_path(@products), notice: 'Car was successfully updated.' }
+      if @product.update_attributes(params[:product])
+        format.html { redirect_to products_path(@product), notice: 'Car was successfully updated.' }
       else
         format.html { render action: "edit" }
       end
@@ -46,8 +48,8 @@ class ProductsController < ApplicationController
 
   
   def destroy
-    @products = Product.find(params[:id])
-    @products.destroy
+    @product = Product.find(params[:id])
+    @product.destroy
 
     respond_to do |format|
       format.html { redirect_to products_url }

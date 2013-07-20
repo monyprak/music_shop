@@ -8,6 +8,7 @@
 %table.table.table-hover
   %th= "Product"
   %th= "Price"
+  %th= "Category"
   %th= "Description"
   %th= "Path Image"
   %th= "Top Product"
@@ -16,6 +17,7 @@
     %tr  
       %td= product.name
       %td= product.price
+      %td= product.category.name
       %td= product.description
       %td= product.path_img
       %td= product.top_product
