@@ -1,3 +1,10 @@
+// -------------bootstrap variable-----------------//
+$gridColumns: 24;
+$gridColumnWidth: 28px;
+$gridGutterWidth: 14px;
+$gridGutterHeight: $gridGutterWidth;
+
 @import "bootstrap";
 @import "variable";
 @import "categories";
+@import "header"
