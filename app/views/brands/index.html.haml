@@ -9,12 +9,14 @@
   %th= "Brand"
   %th= "Description"
   %th= "Path Image"
+  %th= "Count Brands"
   %th= "Actions"
   - @brands.each do |brand|
     %tr  
       %td= brand.name
       %td= brand.description
       %td= brand.path_img
+      %td= brand.products.count
       %td
         = link_to "Edit" , edit_brand_path(brand.id) , class: "btn"
         = link_to "Delete" , brand_path(brand.id) , class: "btn btn-danger" , method: :delete , data: { confirm: "Are you sure?"}

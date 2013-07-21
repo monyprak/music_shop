@@ -9,12 +9,14 @@
   %th= "Categories"
   %th= "Description"
   %th= "Path Image"
+  %th= "Count Products"
   %th= "Actions"
   - @categories.each do |category|
     %tr  
       %td= category.name
       %td= category.description
       %td= category.path_img
+      %td= category.products.count
       %td
         = link_to "Edit" , edit_category_path(category.id) , class: "btn"
         = link_to "Delete" , category_path(category.id) , class: "btn btn-danger" , method: :delete , data: { confirm: "Are you sure?"}

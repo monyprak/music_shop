@@ -7,6 +7,7 @@ class ProductsController < ApplicationController
   def new
     @product = Product.new
     @categories = Category.all
+    @brands = Brand.all
   end
 
   
@@ -26,6 +27,7 @@ class ProductsController < ApplicationController
   def edit
     @product = Product.find(params[:id])
     @categories = Category.all
+    @brands = Brand.all
   end
 
 

@@ -15,7 +15,11 @@
     = f.label :top_product
     = f.check_box :top_product
     %br
-    = f.select "category_id", options_from_collection_for_select(@categories, "id", "name"), prompt: "Select something"
+    = f.label "Category Name"
+    = f.select "category_id", options_from_collection_for_select(@categories, "id", "name"), prompt: "Please select category"
+    %br
+    = f.label "Brand Name"
+    = f.select "brand_id", options_from_collection_for_select(@brands, "id", "name"), prompt: "Please Select brand"
     %br
     = f.submit "Save" , class: "btn btn-success"
     = link_to 'Cancel' , products_path() , class: "btn"   
