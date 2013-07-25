@@ -38,7 +38,7 @@ class BrandsController < ApplicationController
 
     respond_to do |format|
       if @brands.update_attributes(params[:brand])
-        format.html { redirect_to brands_path(@brands), notice: 'Car was successfully updated.' }
+        format.html { redirect_to brands_path(), notice: 'Car was successfully updated.' }
       else
         format.html { render action: "edit" }
       end

@@ -6,8 +6,11 @@
     = javascript_include_tag "application"
     = csrf_meta_tags
   %body
-    .container
-      = render :partial => "header"
+    .container.header
+      .container  
+        = render :partial => "header"
       / = render :partial => "layouts/menu"
+    .container
+      = render :partial => "menu"
       = yield
       / = render :partial => "footer"  

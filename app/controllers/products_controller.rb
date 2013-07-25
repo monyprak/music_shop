@@ -41,7 +41,7 @@ class ProductsController < ApplicationController
 
     respond_to do |format|
       if @product.update_attributes(params[:product])
-        format.html { redirect_to products_path(@product), notice: 'Car was successfully updated.' }
+        format.html { redirect_to products_path(), notice: 'Car was successfully updated.' }
       else
         format.html { render action: "edit" }
       end

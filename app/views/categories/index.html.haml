@@ -3,32 +3,40 @@
 
 /   .span16{style: "background-color: red; height: 400px;"}
 
-%h3
-  Page Category
-%br
-= link_to 'Add Category' , new_category_path() , class: "btn btn-success"          
-%br
-%br
+/ %h3
+/   Page Category
+/ %br
+/ = link_to 'Add Category' , new_category_path() , class: "btn btn-success"          
+/ %br
+/ %br
 
-%table.table.table-hover
-  %th= "Categories"
-  %th= "Description"
-  %th= "Path Image"
-  %th= "Count Products"
-  %th= "Actions"
+/ %table.table.table-hover
+/   %th= "Categories"
+/   %th= "Description"
+/   %th= "Path Image"
+/   %th= "Count Products"
+/   %th= "Actions"
+/   - @categories.each do |category|
+/     %tr  
+/       %td= category.name
+/       %td= category.description
+/       %td= category.path_img
+/       %td= category.products.count
+/       %td
+/         = link_to "Edit" , edit_category_path(category.id) , class: "btn"
+/         = link_to "Delete" , category_path(category.id) , class: "btn btn-danger" , method: :delete , data: { confirm: "Are you sure?"}
+= render :partial => "category_filter"
+.row
   - @categories.each do |category|
-    %tr  
-      %td= category.name
-      %td= category.description
-      %td= category.path_img
-      %td= category.products.count
-      %td
-        = link_to "Edit" , edit_category_path(category.id) , class: "btn"
-        = link_to "Delete" , category_path(category.id) , class: "btn btn-danger" , method: :delete , data: { confirm: "Are you sure?"}
-
-
-
-
-
-
-
+    .span3
+      %h3.box-header= category.name 
+      %img{:src => "images/image1.png"}
+      %div.category-footer
+        %p.max-width= category.description
+        %div.category-count-products-and-action
+          %strong
+            = category.products.count
+          %span
+            Products
+          = link_to content_tag('i', nil, class: 'icon-trash'), category_path(category.id), class: "align-right", method: :delete, data: { confirm: "Do you want to delete category: " + category.name }
+          = link_to content_tag('i', nil, class: 'icon-pencil'), edit_category_path(category.id), class: "align-right"

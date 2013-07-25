@@ -1,10 +1,20 @@
 // -------------bootstrap variable-----------------//
-$gridColumns: 24;
+/*$gridColumns: 24;
 $gridColumnWidth: 28px;
 $gridGutterWidth: 14px;
+$gridGutterHeight: $gridGutterWidth;*/
+
+$gridColumns: 12;
+$gridColumnWidth: 60px;
+$gridGutterWidth: 20px;
 $gridGutterHeight: $gridGutterWidth;
+
+
+
 
 @import "bootstrap";
 @import "variable";
 @import "categories";
-@import "header"
+@import "header";
+@import "menu";
+@import "typo";

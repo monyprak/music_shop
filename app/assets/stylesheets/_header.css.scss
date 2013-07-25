@@ -1,28 +1,14 @@
-.row.header-padding-bottom {
-  padding-bottom: 46px;
+.container.header {
+  width: auto;
+  background-color: #fafafa;
+  border-bottom: 1px solid #f0f0f0;
 }
+
 
 h1 {
-  font-size: 26px; 
   color:#4ac4e8;
-  padding: 10px 10px;
+  padding: 5px 0;
+  font-weight: normal;
 }
 
-.span24.header-background-color {
-  background-color: #CECECE;
-}
 
-ul.header-style > li {
-  display:inline-block;
-  margin-right:56px;
-  font-size: 18px;
-}
-
-.active-nav-bar{
-  color:#333;
-  font-weight: bold;
-  text-decoration: none;
-}
-ul.header-style > li > a {
-  color: #333; 
-}

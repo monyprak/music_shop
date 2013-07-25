@@ -1,0 +1,31 @@
+//
+// Typography
+// --------------------------------------------------
+
+
+// Headings
+// -------------------------
+h1 { font-size: 26px; }
+h2 { font-size: 20px; } 
+h3 { font-size: 18px; } 
+h4 { font-size: 16px; } 
+
+h1, h2, h3, h4 {
+  line-height: 1.2em;
+}
+
+
+//Other Elements
+//--------------------------
+img {
+  border: 1px solid #f0f0f0;
+}
+
+p{
+  font-size: 14px;
+  line-height: 19px;
+  color: $grayLight;
+}
+strong, span {
+  color: $grayLight; 
+}

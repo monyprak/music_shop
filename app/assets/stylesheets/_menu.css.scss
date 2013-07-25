@@ -1,0 +1,43 @@
+.row.menu-padding {
+  padding-top: 30px;
+}
+
+
+ul.menu-style {
+  border-bottom: 1px solid #f0f0f0;
+  margin: 0;
+}
+
+
+ul.menu-style > li {
+  color: $grayDark;
+  display:inline-block;
+  margin-right:56px;
+  font-size: 18px;
+  padding-bottom: 10px;
+}
+
+
+ul.menu-style > li:hover {
+  padding-bottom: 8px;
+  border-bottom: 2px solid #9ce1f4; 
+}
+
+
+ul.menu-style > li.active-nav-bar{
+  font-weight: bold;
+  text-decoration: none;
+  padding-bottom: 8px;
+  border-bottom: 2px solid #50c6e9;
+  cursor: default;
+}
+
+
+ul.menu-style > li > a {
+  color: #333; 
+}
+
+
+ul.menu-style > li > a:hover {
+  text-decoration: none;
+}
