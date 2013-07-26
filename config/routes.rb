@@ -8,7 +8,11 @@ MusicShop::Application.routes.draw do
   resources :brands
 
 
-  resources :categories
+  resources :categories do
+      member do
+        get 'products'
+      end
+  end
 
   
   root :to => 'categories#index'

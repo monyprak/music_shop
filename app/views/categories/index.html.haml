@@ -1,36 +1,10 @@
-/ .row
-/   .span8{style: "background-color: blue; height: 400px;"}
-
-/   .span16{style: "background-color: red; height: 400px;"}
-
-/ %h3
-/   Page Category
-/ %br
-/ = link_to 'Add Category' , new_category_path() , class: "btn btn-success"          
-/ %br
-/ %br
-
-/ %table.table.table-hover
-/   %th= "Categories"
-/   %th= "Description"
-/   %th= "Path Image"
-/   %th= "Count Products"
-/   %th= "Actions"
-/   - @categories.each do |category|
-/     %tr  
-/       %td= category.name
-/       %td= category.description
-/       %td= category.path_img
-/       %td= category.products.count
-/       %td
-/         = link_to "Edit" , edit_category_path(category.id) , class: "btn"
-/         = link_to "Delete" , category_path(category.id) , class: "btn btn-danger" , method: :delete , data: { confirm: "Are you sure?"}
 = render partial: "category_filter"
 .row
   - @categories.each do |category|
     .span3.box-padding-bottom
       %h3.box-header= category.name 
-      %img{src: "images/image1.png"}
+      / %img{src: "images/image1.png"}
+      = link_to  content_tag('img', nil, src: "images/image1.png"), products_category_path(category.id)
       .category-footer
         %p.max-width= category.description
         .category-count-products-and-action

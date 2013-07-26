@@ -56,4 +56,8 @@ class CategoriesController < ApplicationController
   end
 
 
+  def products
+    # @products = Product.where(category_id: params[:id])
+  end
+
 end
