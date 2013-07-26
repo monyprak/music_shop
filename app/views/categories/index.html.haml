@@ -25,15 +25,15 @@
 /       %td
 /         = link_to "Edit" , edit_category_path(category.id) , class: "btn"
 /         = link_to "Delete" , category_path(category.id) , class: "btn btn-danger" , method: :delete , data: { confirm: "Are you sure?"}
-= render :partial => "category_filter"
+= render partial: "category_filter"
 .row
   - @categories.each do |category|
-    .span3
+    .span3.box-padding-bottom
       %h3.box-header= category.name 
-      %img{:src => "images/image1.png"}
-      %div.category-footer
+      %img{src: "images/image1.png"}
+      .category-footer
         %p.max-width= category.description
-        %div.category-count-products-and-action
+        .category-count-products-and-action
           %strong
             = category.products.count
           %span

@@ -6,15 +6,15 @@ class BrandsController < ApplicationController
 
   
   def new
-    @brands = Brand.new
+    @brand = Brand.new
   end
 
   
   def create
-    @brands = Brand.new(params[:brand])
+    @brand = Brand.new(params[:brand])
 
     respond_to do |format|
-      if @brands.save
+      if @brand.save
         format.html { redirect_to brands_path(), notice: 'Category was successfully created.' }
       else
         format.html { render action: "new" }
@@ -24,7 +24,7 @@ class BrandsController < ApplicationController
 
   
   def edit
-    @brands = Brand.find(params[:id])
+    @brand = Brand.find(params[:id])
   end
 
 
@@ -34,10 +34,10 @@ class BrandsController < ApplicationController
   
   
   def update
-    @brands= Brand.find(params[:id])
+    @brand= Brand.find(params[:id])
 
     respond_to do |format|
-      if @brands.update_attributes(params[:brand])
+      if @brand.update_attributes(params[:brand])
         format.html { redirect_to brands_path(), notice: 'Car was successfully updated.' }
       else
         format.html { render action: "edit" }
@@ -47,8 +47,8 @@ class BrandsController < ApplicationController
 
   
   def destroy
-    @brands = Brand.find(params[:id])
-    @brands.destroy
+    @brand = Brand.find(params[:id])
+    @brand.destroy
 
     respond_to do |format|
       format.html { redirect_to brands_url }

@@ -6,15 +6,15 @@ class CategoriesController < ApplicationController
 
   
   def new
-    @categories = Category.new
+    @category = Category.new
   end
 
   
   def create
-    @categories = Category.new(params[:category])
+    @category = Category.new(params[:category])
 
     respond_to do |format|
-      if @categories.save
+      if @category.save
         format.html { redirect_to categories_path(), notice: 'Category was successfully created.' }
       else
         format.html { render action: "new" }
@@ -24,7 +24,7 @@ class CategoriesController < ApplicationController
 
   
   def edit
-    @categories = Category.find(params[:id])
+    @category = Category.find(params[:id])
   end
 
 
@@ -34,10 +34,10 @@ class CategoriesController < ApplicationController
   
   
   def update
-    @categories= Category.find(params[:id])
+    @category= Category.find(params[:id])
 
     respond_to do |format|
-      if @categories.update_attributes(params[:category])
+      if @category.update_attributes(params[:category])
         format.html { redirect_to categories_path(), notice: 'Car was successfully updated.' }
       else
         format.html { render action: "edit" }
@@ -47,9 +47,9 @@ class CategoriesController < ApplicationController
 
   
   def destroy
-    @categories = Category.find(params[:id])
-    @categories.destroy
+    @category = Category.find(params[:id])
 
+    @category.destroy if Category.check_count_products(params[:id]).count == 0
     respond_to do |format|
       format.html { redirect_to categories_url }
     end
