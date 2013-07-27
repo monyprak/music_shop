@@ -1,3 +1,74 @@
+//
+// Style box for category and brand
+// --------------------------------------------------
+
+h3.box-header {
+  font-weight: normal;
+  background: #f9f9f9;
+  text-align: center;
+  line-height: 46px;
+}
+
+
+.wrap-box-footer {
+  height: 166px;
+  /*height: 156px;*/
+  background: #f9f9f9;
+  padding: 20px 16px;
+}
+
+
+p.max-width {
+  margin: 0;
+  height: 136px;
+}
+
+
+.wrap-count-products-and-action {
+  /*position: relative;*/
+  display: block;
+  border-top: 1px solid #efefef;
+  padding-top: 10px;
+}
+
+
+.wrap-count-products-and-action > strong {
+  padding-right: 6px;
+}
+
+
+.wrap-count-products-and-action > a.align-right {
+  float: right;
+  padding-left: 14px;
+  opacity:0.5;
+  filter:alpha(opacity=50);   /*  FOr IE8  */
+}
+
+
+.wrap-count-products-and-action > a.align-right:hover {
+  opacity:0.8;
+  filter:alpha(opacity=80);   /*  FOr IE8  */
+}
+
+
 .box-padding-bottom {
   padding-bottom: 20px; 
+}
+
+
+
+//
+// Filter
+// --------------------------------------------------
+
+.filter-contain {
+  background: #fafafa;
+}
+
+.filter-padding-top-buttom {
+  padding: 30px 0;
+}
+
+.vertical-alignment {
+  margin: 10px 10px 10px 0;
 }

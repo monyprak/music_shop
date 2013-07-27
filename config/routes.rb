@@ -5,13 +5,17 @@ MusicShop::Application.routes.draw do
   resources :products
 
 
-  resources :brands
-
-
+  resources :brands do
+    member do
+      get 'products'
+    end
+  end 
+  
+  
   resources :categories do
-      member do
-        get 'products'
-      end
+    member do
+      get 'products'
+    end
   end
 
   

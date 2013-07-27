@@ -1,13 +1,13 @@
-= render partial: "category_filter"
+= render partial: "categories_filter"
 .row
   - @categories.each do |category|
     .span3.box-padding-bottom
       %h3.box-header= category.name 
       / %img{src: "images/image1.png"}
-      = link_to  content_tag('img', nil, src: "images/image1.png"), products_category_path(category.id)
-      .category-footer
+      = link_to  content_tag('img', nil, src: "images/categories/image1.png"), products_category_path(category.id)
+      .wrap-box-footer
         %p.max-width= category.description
-        .category-count-products-and-action
+        .wrap-count-products-and-action
           %strong
             = category.products.count
           %span
