@@ -1,3 +1,169 @@
-// Place all the styles related to the products controller here.
-// They will automatically be included in application.css.
-// You can use Sass (SCSS) here: http://sass-lang.com/
+//
+// Left Menu
+// --------------------------------------------------
+
+.left-menu-bg {
+  background: #fafafa;
+  width: 180px;
+  padding: 20px;
+}
+
+
+.h6-header-left-menu {
+  padding-bottom: 20px;
+  color: #bfa15a;
+  border-bottom: 1px solid #f0f0f0;
+}
+
+
+.ul-left-menu {
+  margin: 0px;
+  padding: 16px 0;
+  border-bottom: 1px solid #f0f0f0;
+}
+
+
+.ul-left-menu li {
+  list-style: none;
+  list-style-position: inside;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;    
+}
+
+
+.ul-left-menu li:hover {
+  background: #eee;
+  color: red;
+}
+
+
+.ul-left-menu li {        //  If it has li under this class it will apply
+  span, a {   
+    font-size: 13px;
+    // color: #707070;
+    line-height: 28px;
+  }
+} 
+
+
+.ul-left-menu li > a {   
+  display: block;
+  color: $grayLight;
+  text-decoration: none;
+}
+
+
+.ul-left-menu li > a:hover {
+  color: $grayDark;
+}
+
+
+.left-menu-actived {
+  color: #cc6600;
+  font-weight: bold;
+  cursor: default;
+}
+
+
+//
+// Products list
+// --------------------------------------------------
+
+
+.product-list-contain {
+  height: 175px;
+  border-bottom: 1px solid #f0f0f0;
+  padding: 20px 0;
+}
+
+
+.product-list-contain a {
+  display: inline-block;
+}
+
+
+.product-list-contain img {
+  border: none;
+  height: 175px;
+  width: 140px;
+  padding-right: 20px;
+}
+
+
+.product-list-name-desc-contain {
+  display: inline-block;
+  height: 175px; 
+  width: 350px;
+  border-right: 1px solid #f0f0f0;
+
+  // white-space: nowrap; 
+  overflow: hidden;
+  text-overflow: ellipsis;    
+}
+
+
+.product-list-name-desc-contain a {
+  color: $blueLight;
+  font-size: 16px;
+  padding: 20px 0;
+}
+
+
+.product-list-name-desc-contain a:hover {
+  color: $blueDark;
+}
+
+
+.product-list-name-desc-contain p {
+  height: 110px;
+  width: 330px;
+}
+
+
+.product-list-cate-bra-pri-contain {
+  display: inline-block;
+  height: 175px; 
+  width: 168px; 
+}
+
+
+.product-list-cate-bra-pri-contain strong {
+  display: inline-block;
+  color: $grayLight;
+  padding-bottom: 2px;
+}
+
+
+.product-list-cate-bra-pri-contain span{
+  display: block;
+  padding-bottom: 14px;
+}
+
+
+.product-list-cate-bra-pri-contain h3 {
+  color: $grayLight;
+  padding-top: 10px;
+}
+
+
+.product-list-action-contain {
+  clear: both;
+  display: block;
+  padding-top: 25px;
+}
+
+
+.product-list-action-contain a {
+  padding-left: 14px;
+  opacity:0.5;
+  filter:alpha(opacity=50);
+}
+
+
+.product-list-action-contain a:hover {
+  padding-left: 14px;
+  opacity:0.8;
+  filter:alpha(opacity=80);
+}
+

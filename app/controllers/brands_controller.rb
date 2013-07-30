@@ -56,7 +56,9 @@ class BrandsController < ApplicationController
 
 
   def products
-    @products = Product.where(brand_id: params[:id])    
+    @products = Product.where(brand_id: params[:id])   
+    @categories = Category.all
+    @brands = Brand.all 
   end
 
 end

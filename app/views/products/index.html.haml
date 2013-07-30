@@ -1,35 +1,65 @@
-%h3
-  Page Product
-%br
-= link_to 'Add Product' , new_product_path() , class: "btn btn-success"          
-%br
-%br
+/ %h3
+/   Page Product
+/ %br
+/ = link_to 'Add Product' , new_product_path() , class: "btn btn-success"          
+/ %br
+/ %br
 
-%table.table.table-hover
-  %th= "Product"
-  %th= "Price"
-  %th= "Category"
-  %th= "Brand"
-  %th= "Description"
-  %th= "Path Image"
-  %th= "Top Product"
-  %th= "Actions"
-  - @products.each do |product|
-    %tr  
-      %td= product.name
-      %td= product.price
-      %td= product.category.name
-      %td= product.brand.name
-      %td= product.description
-      %td= product.path_img
-      %td= product.top_product
-      %td
-        = link_to "Edit" , edit_product_path(product.id) , class: "btn"
-        = link_to "Delete" , product_path(product.id) , class: "btn btn-danger" , method: :delete , data: { confirm: "Are you sure?"}
-
-
+/ %table.table.table-hover
+/   %th= "Product"
+/   %th= "Price"
+/   %th= "Category"
+/   %th= "Brand"
+/   %th= "Description"
+/   %th= "Path Image"
+/   %th= "Top Product"
+/   %th= "Actions"
+/   - @products.each do |product|
+/     %tr  
+/       %td= product.name
+/       %td= product.price
+/       %td= product.category.name
+/       %td= product.brand.name
+/       %td= product.description
+/       %td= product.path_img
+/       %td= product.top_product
+/       %td
+/         = link_to "Edit" , edit_product_path(product.id) , class: "btn"
+/         = link_to "Delete" , product_path(product.id) , class: "btn btn-danger" , method: :delete , data: { confirm: "Are you sure?"}
 
 
+= render partial: "product_filter"
 
+.row
+  = render partial: "left_menu"
 
+  .span9
+    .row
+      - @products.each do |product|
+        .span9.product-list-contain
+          = link_to  content_tag('img', nil, src: "images/products/products_list/image1-small.png"), "#", class: " pull-left"
+          .product-list-name-desc-contain.pull-left
+            = link_to product.name, "#"
+            %p
+              = product.description
+
+          .product-list-cate-bra-pri-contain.pull-right
+            %strong
+              CAT
+            %span
+              = product.category.name
+            %strong
+              BRA
+            %span
+              = product.brand.name 
+            %h3
+              $
+              = product.price    
+
+            .product-list-action-contain
+              = link_to content_tag('i', nil, class: 'icon-trash'), product_path(product.id), class: "align-right pull-right", method: :delete, data: { confirm: "Do you want to delete category: " + product.name }
+              = link_to content_tag('i', nil, class: 'icon-pencil pull-right'), edit_product_path(product.id), class: "align-right pull-right"
+  
+
+        
 

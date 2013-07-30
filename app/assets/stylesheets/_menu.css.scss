@@ -1,15 +1,19 @@
+//
+// Top Menu
+// --------------------------------------------------
+
 .row.menu-padding {
   padding-top: 30px;
 }
 
 
-ul.menu-style {
+.menu-style {
   border-bottom: 1px solid #f0f0f0;
   margin: 0;
 }
 
 
-ul.menu-style > li {
+.menu-style > li {
   color: $grayDark;
   display:inline-block;
   margin-right:56px;
@@ -18,13 +22,13 @@ ul.menu-style > li {
 }
 
 
-ul.menu-style > li:hover {
+.menu-style > li:hover {
   padding-bottom: 8px;
   border-bottom: 2px solid #9ce1f4; 
 }
 
 
-ul.menu-style > li.active-nav-bar{
+.menu-style > li.active-nav-bar{
   font-weight: bold;
   text-decoration: none;
   padding-bottom: 8px;
@@ -33,11 +37,80 @@ ul.menu-style > li.active-nav-bar{
 }
 
 
-ul.menu-style > li > a {
+.menu-style > li > a {
   color: #333; 
 }
 
 
-ul.menu-style > li > a:hover {
+.menu-style > li > a:hover {
   text-decoration: none;
+}
+
+
+
+//
+// Left Menu
+// --------------------------------------------------
+
+.left-menu-bg {
+  background: #fafafa;
+  width: 180px;
+  padding: 20px;
+}
+
+
+.h6-header-left-menu {
+  padding-bottom: 20px;
+  color: #bfa15a;
+  border-bottom: 1px solid #f0f0f0;
+}
+
+
+.ul-left-menu {
+  margin: 0px;
+  padding: 16px 0;
+  border-bottom: 1px solid #f0f0f0;
+}
+
+
+.ul-left-menu li {
+  list-style: none;
+  list-style-position: inside;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;    
+}
+
+
+.ul-left-menu li:hover {
+  background: #eee;
+  color: red;
+}
+
+
+.ul-left-menu li {        //  If it has li under this class it will apply
+  span, a {   
+    font-size: 13px;
+    // color: #707070;
+    line-height: 28px;
+  }
+} 
+
+
+.ul-left-menu li > a {   
+  display: block;
+  color: $grayLight;
+  text-decoration: none;
+}
+
+
+.ul-left-menu li > a:hover {
+  color: $grayDark;
+}
+
+
+.left-menu-actived {
+  color: #cc6600;
+  font-weight: bold;
+  cursor: default;
 }
