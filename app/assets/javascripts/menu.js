@@ -10,12 +10,16 @@ $(document).ready(function(){
   arrTop = $(location).attr('href').split("/",6);
   arrTop[3] = "/" + arrTop[3];
 
-  if(arrTop[3] == "/"){           // fOR Home Page
+  if(arrTop[3] == "/"){                  // Check url index page
     arrTop[3] = "/categories";
   }
 
-  if(arrTop[5] != null){
+  if(arrTop[5] != null){                 //  check url from caregory and brand user define method
     arrTop[3] = "/" + arrTop[5];
+  }
+
+  if(arrTop[4] == "top_products"){       //  check url from product user define method
+    arrTop[3] = "/products/" + arrTop[4];
   }
 
   var a_ele = [];

@@ -59,4 +59,12 @@ class ProductsController < ApplicationController
       format.html { redirect_to products_url }
     end
   end
+
+
+  def top_products
+    @products = Product.where(top_product: true)
+    @categories = Category.all
+    @brands = Brand.all 
+  end
+
 end

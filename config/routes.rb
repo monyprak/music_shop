@@ -1,8 +1,12 @@
 MusicShop::Application.routes.draw do
-  resources :top_products
+  # resources :top_products
 
 
-  resources :products
+  resources :products do
+    collection do
+      get 'top_products'
+    end
+  end  
 
 
   resources :brands do
