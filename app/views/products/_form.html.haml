@@ -1,25 +1,29 @@
-= form_for(@product) do |f|
-  .field
-    = f.label :name
-    = f.text_field :name
-    %br
-    = f.label :price
-    = f.text_field :price
-    %br
-    = f.label :description
-    = f.text_field :description
-    %br
-    = f.label :path_img
-    = f.text_field :path_img
-    %br
-    = f.label :top_product
-    = f.check_box :top_product
-    %br
-    = f.label "Category Name"
-    = f.select "category_id", options_from_collection_for_select(@categories, "id", "name"), prompt: "Please select category"
-    %br
-    = f.label "Brand Name"
-    = f.select "brand_id", options_from_collection_for_select(@brands, "id", "name"), prompt: "Please Select brand"
-    %br
-    = f.submit "Save" , class: "btn btn-success"
+
+= form_tag(search_products_path(), method: "get") do
+  
+  .span3 
+    //for image
+
+  .span9.pull-right 
+    = label_tag :name
+    = text_field_tag(:name,"", class: "textbox-form-width")
+    
+    = label_tag :price
+    = text_field_tag(:price,"", class: "textbox-form-width")
+    
+    = label_tag :description
+    = text_area_tag(:description,"", class: "textarea-form")
+    
+    = label_tag :category
+    = select_tag :category, options_from_collection_for_select(@categories, "id", "name"), prompt: "Please select category", class: "select-form-width dropdown-toggles"
+
+    = label_tag :brand
+    = select_tag :brand, options_from_collection_for_select(@brands, "id", "name"), prompt: "Please select brand", class: "select-form-width dropdown-toggles"
+
+    = label_tag :top_product
+    = check_box_tag :top_product
+
+
+  .span12.footer-form
+    = submit_tag 'Save', class: "btn btn-success button-spacing"  
     = link_to 'Cancel' , products_path() , class: "btn"   

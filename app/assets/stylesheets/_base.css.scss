@@ -79,15 +79,6 @@ p.max-width {
 // Base class
 // ---------------------------------------------------
 
-form {
-  display: inline;
-}
-
-.textbox-search-width{
-  width: 350px;
-  margin-left: 10px;
-  margin-right: 0;
-}
 
 .clear-border {
   border: none;
@@ -101,4 +92,68 @@ form {
 
 .margin-top-spacing {
   margin-top: 20px;
+}
+
+
+// Form style
+//------------------------
+
+form {
+  display: inline;
+}
+
+select {
+  margin-bottom: 20px;
+} 
+
+.textbox-search-width{
+  width: 350px;
+  margin-left: 10px;
+  margin-right: 0;
+}
+
+
+.textarea-form{
+  resize: none;
+  width: 350px;
+  height: 150px;
+  margin-bottom: 20px;
+}
+
+
+.textbox-form-width{
+  width: 350px;
+  margin-bottom: 20px !important;
+}
+
+
+.select-form-width{
+  width: 360px;
+}
+
+.header-form {
+  background: #fafafa;
+  border-bottom: 1px solid #f0f0f0;
+  margin-top: 30px;
+  margin-bottom: 30px;
+}
+
+
+.header-form h3 {
+  display: inline-block;
+  color: #BFA15A;
+  margin: 16px 16px;
+}
+
+
+.footer-form {
+  background: #fafafa;
+  border-top: 1px solid #f0f0f0;
+  margin-top: 30px;
+  margin-bottom: 30px;
+  padding: 16px 16px;
+}
+
+.button-spacing {
+  margin-right: 10px
 }
