@@ -1,0 +1,11 @@
+.row.filter-padding-top-buttom
+  .span12.filter-contain
+        
+    = form_tag(search_products_path(), method: "get") do
+      = text_field_tag(:name,"",placeholder: "Search...", class: "vertical-alignment textbox-search-width")
+      = button_tag(type: 'submit', class: "btn") do
+        %i.icon-search
+    
+    = link_to 'Add Product' , new_product_path() , class: "btn btn-success pull-right vertical-alignment " 
+    
+

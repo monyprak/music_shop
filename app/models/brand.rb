@@ -3,7 +3,8 @@ class Brand < ActiveRecord::Base
 
   has_many :products
 
-  def self.check_count_products(brand_id)
-    @product = Product.where(brand_id: brand_id)
-  end  
+
+  def self.get_products(id)
+    @products = Product.where(brand_id: id)
+  end
 end

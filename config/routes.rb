@@ -5,21 +5,22 @@ MusicShop::Application.routes.draw do
   resources :products do
     collection do
       get 'top_products'
+      get 'search'
     end
+    # get 'search', on: :collection
   end  
 
 
   resources :brands do
-    member do
-      get 'products'
-    end
+    # member do
+    #   get 'products'
+    # end
+    get 'products', on: :member
   end 
   
   
   resources :categories do
-    member do
-      get 'products'
-    end
+    get 'products', on: :member
   end
 
   

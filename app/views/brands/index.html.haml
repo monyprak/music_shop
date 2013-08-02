@@ -1,34 +1,8 @@
-/ %h3
-/   Page Brand
-/ %br
-/ = link_to 'Add Brand' , new_brand_path() , class: "btn btn-success"          
-/ %br
-/ %br
-
-/ %table.table.table-hover
-/   %th= "Brand"
-/   %th= "Description"
-/   %th= "Path Image"
-/   %th= "Count Brands"
-/   %th= "Actions"
-/   - @brands.each do |brand|
-/     %tr  
-/       %td= brand.name
-/       %td= brand.description
-/       %td= brand.path_img
-/       %td= brand.products.count
-/       %td
-/         = link_to "Edit" , edit_brand_path(brand.id) , class: "btn"
-/         = link_to "Delete" , brand_path(brand.id) , class: "btn btn-danger" , method: :delete , data: { confirm: "Are you sure?"}
-
-
-
 = render partial: "brands_filter"
 .row
   - @brands.each do |brand|
     .span3.box-padding-bottom
       %h3.box-header= brand.name 
-      / %img{src: "images/image1.png"}
       = link_to  content_tag('img', nil, src: "images/brands/image2.png"), products_brand_path(brand.id)
       .wrap-box-footer
         %p.max-width= brand.description

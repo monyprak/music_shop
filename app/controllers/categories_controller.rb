@@ -49,7 +49,7 @@ class CategoriesController < ApplicationController
   def destroy
     @category = Category.find(params[:id])
 
-    @category.destroy if Category.check_count_products(params[:id]).count == 0
+    @category.destroy if Category.get_products(params[:id]).count == 0
     respond_to do |format|
       format.html { redirect_to categories_url }
     end
@@ -57,7 +57,7 @@ class CategoriesController < ApplicationController
 
 
   def products
-    @products = Product.where(category_id: params[:id])
+    @products = Category.get_products(params[:id])
     @categories = Category.all
     @brands = Brand.all
   end

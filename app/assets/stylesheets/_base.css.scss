@@ -79,7 +79,26 @@ p.max-width {
 // Base class
 // ---------------------------------------------------
 
+form {
+  display: inline;
+}
+
+.textbox-search-width{
+  width: 350px;
+  margin-left: 10px;
+  margin-right: 0;
+}
+
 .clear-border {
   border: none;
   // padding-bottom: -80px;
+}
+
+
+.img-no-border {
+   border: none;
+}
+
+.margin-top-spacing {
+  margin-top: 20px;
 }

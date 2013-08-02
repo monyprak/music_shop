@@ -1,13 +1,23 @@
+//
+// Left Menu
+// --------------------------------------------------
+
 .span3.left-menu-bg
   %h6.h6-header-left-menu
     FILTER
 
-  %ul.ul-left-menu
+
+  // Left menu for Any Categories & Brands
+  // -------------------------
+
+  %ul.ul-left-menu                                                    
     %li
       = link_to "Any Categories & Brands", products_path()
-    / %li
-    /   = link_to "Top Products", "#"    
   
+ 
+  // Left menu for category
+  // -------------------------
+
   %ul.ul-left-menu
     %h6.h6-header-left-menu.clear-border
       CAT
@@ -16,9 +26,10 @@
         = link_to category.name, products_category_path(category.id)   
     
   
+  // Left menu for brand
+  // -------------------------
+
   %ul.ul-left-menu.clear-border
-    / %li
-    /   = link_to "Any Brands", products_path()
     %h6.h6-header-left-menu.clear-border
       BRA
     - @brands.each do |brand|

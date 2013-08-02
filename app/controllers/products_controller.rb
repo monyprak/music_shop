@@ -34,7 +34,9 @@ class ProductsController < ApplicationController
 
 
   def show
-   
+    @product = Product.find(params[:id])
+    @categories = Category.all
+    @brands = Brand.all 
   end
   
   
@@ -64,7 +66,15 @@ class ProductsController < ApplicationController
   def top_products
     @products = Product.where(top_product: true)
     @categories = Category.all
-    @brands = Brand.all 
+    @brands = Brand.all
+    # render action: "index" 
+  end
+
+  def search
+    @products = Product.where("name like '%#{params[:name]}%'")
+    @categories = Category.all
+    @brands = Brand.all
+    # render action: "index"
   end
 
 end

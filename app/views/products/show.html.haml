@@ -1,0 +1,33 @@
+/ = render partial: "product_filter"
+
+.row.margin-top-spacing
+  = render partial: "left_menu"
+
+  .span9
+    .row
+      .span9.header-detail 
+        %h3
+          Product Detail
+          / = @product.name
+
+        = link_to "Go back", products_path(), class: "btn pull-right"       
+    .row.product-detail-top-spacing
+      .span3
+        = image_tag '../../images/products/product_detail/image1.png', :title => 'Delete user', class: "img-no-border"
+
+      .span6.product-detail
+        %h4
+          = @product.name   
+        %p
+          = @product.description  
+        %strong
+          CAT
+        %span
+          = @product.category.name
+        %strong
+          BRA
+        %span
+          = @product.brand.name 
+        %h3
+          $
+          = @product.price      

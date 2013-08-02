@@ -2,15 +2,13 @@
 %html
   %head
     %title MusicStore
-    = stylesheet_link_tag    "application", :media => "all"
+    = stylesheet_link_tag    "application", media: "all"
     = javascript_include_tag "application"
     = csrf_meta_tags
   %body
     .container.header
       .container  
-        = render :partial => "header"
-      / = render :partial => "layouts/menu"
+        = render partial: "header"
     .container
-      = render :partial => "menu"
+      = render partial: "menu"
       = yield
-      / = render :partial => "footer"  

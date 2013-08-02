@@ -99,3 +99,55 @@
   filter:alpha(opacity=80);
 }
 
+
+//
+// Products Detail
+// --------------------------------------------------
+
+.header-detail {
+  background: #fafafa;
+  // border-bottom: 1px solid #f0f0f0;
+  // margin: 0;
+}
+
+
+.header-detail h3 {
+  display: inline-block;
+  color: #BFA15A;
+  margin: 16px 16px;
+}
+
+
+.header-detail a {
+  margin-top: 12px;
+  margin-right: 16px;
+}
+
+
+.product-detail h4{
+  color: #4AC4E8;
+  font-weight: normal;
+}
+
+.product-detail p {
+  padding: 20px 0;
+}
+
+.product-detail span, strong, h3 {
+  color: $grayLight;
+}
+
+.product-detail span {
+  display: block;
+  padding-bottom: 14px;
+}
+
+
+.product-detail h3 {
+  margin-top: 10px;
+}
+
+
+.product-detail-top-spacing {
+  margin-top: 40px;
+}
