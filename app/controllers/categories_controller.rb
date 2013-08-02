@@ -38,7 +38,7 @@ class CategoriesController < ApplicationController
 
     respond_to do |format|
       if @category.update_attributes(params[:category])
-        format.html { redirect_to categories_path(), notice: 'Car was successfully updated.' }
+        format.html { redirect_to categories_path(), notice: 'Category was successfully updated.' }
       else
         format.html { render action: "edit" }
       end

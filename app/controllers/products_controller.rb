@@ -18,7 +18,7 @@ class ProductsController < ApplicationController
 
     respond_to do |format|
       if @product.save
-        format.html { redirect_to products_path(), notice: 'Category was successfully created.' }
+        format.html { redirect_to products_path(), notice: 'Product was successfully created.' }
       else
         format.html { render action: "new" }
       end
@@ -45,7 +45,7 @@ class ProductsController < ApplicationController
 
     respond_to do |format|
       if @product.update_attributes(params[:product])
-        format.html { redirect_to products_path(), notice: 'Car was successfully updated.' }
+        format.html { redirect_to products_path(), notice: 'Product was successfully updated.' }
       else
         format.html { render action: "edit" }
       end
@@ -70,8 +70,9 @@ class ProductsController < ApplicationController
     # render action: "index" 
   end
 
+
   def search
-    @products = Product.where("name like '%#{params[:name]}%'")
+    @products = Product.search_product(params[:name])
     @categories = Category.all
     @brands = Brand.all
     # render action: "index"

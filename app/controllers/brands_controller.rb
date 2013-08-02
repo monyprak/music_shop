@@ -15,7 +15,7 @@ class BrandsController < ApplicationController
 
     respond_to do |format|
       if @brand.save
-        format.html { redirect_to brands_path(), notice: 'Category was successfully created.' }
+        format.html { redirect_to brands_path(), notice: 'Brand was successfully created.' }
       else
         format.html { render action: "new" }
       end
@@ -38,7 +38,7 @@ class BrandsController < ApplicationController
 
     respond_to do |format|
       if @brand.update_attributes(params[:brand])
-        format.html { redirect_to brands_path(), notice: 'Car was successfully updated.' }
+        format.html { redirect_to brands_path(), notice: 'Brand was successfully updated.' }
       else
         format.html { render action: "edit" }
       end
