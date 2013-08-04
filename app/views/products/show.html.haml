@@ -13,7 +13,7 @@
         = link_to "Go back", products_path(), class: "btn pull-right"       
     .row.product-detail-top-spacing
       .span3
-        = image_tag '../../images/products/product_detail/image1.png', :title => 'Delete user', class: "img-no-border"
+        = image_tag (@product.photo.url(:larg)), :title => 'Delete user', class: "img-no-border"
 
       .span6.product-detail
         %h4

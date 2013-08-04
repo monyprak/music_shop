@@ -11,22 +11,30 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20130720092858) do
+ActiveRecord::Schema.define(:version => 20130804103705) do
 
   create_table "brands", :force => true do |t|
     t.string   "name"
     t.string   "description"
     t.string   "path_img"
-    t.datetime "created_at",  :null => false
-    t.datetime "updated_at",  :null => false
+    t.datetime "created_at",         :null => false
+    t.datetime "updated_at",         :null => false
+    t.string   "photo_file_name"
+    t.string   "photo_content_type"
+    t.integer  "photo_file_size"
+    t.datetime "photo_updated_at"
   end
 
   create_table "categories", :force => true do |t|
     t.string   "name"
     t.string   "description"
     t.string   "path_img"
-    t.datetime "created_at",  :null => false
-    t.datetime "updated_at",  :null => false
+    t.datetime "created_at",         :null => false
+    t.datetime "updated_at",         :null => false
+    t.string   "photo_file_name"
+    t.string   "photo_content_type"
+    t.integer  "photo_file_size"
+    t.datetime "photo_updated_at"
   end
 
   create_table "products", :force => true do |t|
@@ -34,11 +42,15 @@ ActiveRecord::Schema.define(:version => 20130720092858) do
     t.integer  "price"
     t.string   "description"
     t.string   "path_img"
-    t.datetime "created_at",  :null => false
-    t.datetime "updated_at",  :null => false
+    t.datetime "created_at",         :null => false
+    t.datetime "updated_at",         :null => false
     t.boolean  "top_product"
     t.integer  "category_id"
     t.integer  "brand_id"
+    t.string   "photo_file_name"
+    t.string   "photo_content_type"
+    t.integer  "photo_file_size"
+    t.datetime "photo_updated_at"
   end
 
   create_table "top_products", :force => true do |t|

@@ -6,7 +6,9 @@
     .row
       - @products.each do |product|
         .span9.product-list-contain
-          = link_to  content_tag('img', nil, src: "/images/products/products_list/image1-small.png"), product_path(product.id), class: " pull-left"
+          = link_to product_path(product.id) ,class:"pull-left" do
+            = image_tag (product.photo.url(:small))
+
           .product-list-name-desc-contain.pull-left
             = link_to product.name, product_path(product.id)
             %p

@@ -3,7 +3,9 @@
   - @brands.each do |brand|
     .span3.box-padding-bottom
       %h3.box-header= brand.name 
-      = link_to  content_tag('img', nil, src: "images/brands/image2.png"), products_brand_path(brand.id)
+      / = link_to  content_tag('img', nil, src: "images/brands/image2.png"), products_brand_path(brand.id)
+      = link_to products_brand_path(brand.id) do
+        = image_tag (brand.photo.url(:larg))
       .wrap-box-footer
         %p.max-width= brand.description
         .wrap-count-products-and-action

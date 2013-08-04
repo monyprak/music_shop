@@ -4,7 +4,9 @@
     .span3.box-padding-bottom
       %h3.box-header= category.name 
       / %img{src: "images/image1.png"}
-      = link_to  content_tag('img', nil, src: "images/categories/image1.png"), products_category_path(category.id)
+      / = link_to  content_tag('img', nil, src: "images/categories/image1.png"), products_category_path(category.id)
+      = link_to products_category_path(category.id) do
+        = image_tag (category.photo.url(:larg))
       .wrap-box-footer
         %p.max-width= category.description
         .wrap-count-products-and-action

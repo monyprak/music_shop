@@ -1,14 +1,18 @@
 = form_for(@brand) do |f|
   .field
-    = f.label :name
-    = f.text_field :name
-    %br/
-    = f.label :description
-    = f.text_field :description
-    %br/
-    = f.label :path_img
-    = f.text_field :path_img
-    %br/
+    .span3
+      // For imag
+    
+    .span9.pull-right  
+      = f.label :name
+      = f.text_field :name
+    
+      = f.label :description
+      = f.text_field :description
 
-    = f.submit "Save" , class: "btn btn-success"
-    = link_to 'Cancel' , brands_path() , class: "btn"
+      = f.label :photo
+      = f.file_field :photo
+
+    .span12.footer-form   
+      = f.submit "Save" , class: "btn btn-success"
+      = link_to 'Cancel' , brands_path() , class: "btn"
