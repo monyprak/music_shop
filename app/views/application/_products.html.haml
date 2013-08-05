@@ -2,7 +2,29 @@
 .row
   = render partial: "left_menu"
 
+  
+  
+  
   .span9
+    
+    ///
+    ///  Alert message after action
+    ///..............................................
+    
+    / %p#notice
+    /   = flash[:notice]
+
+    - flash.each do |name, msg|
+      - if msg.is_a?(String)
+        %div{class: "alert alert-#{name == :notice ? "success" : "error"}"}
+          %a.close{"data-dismiss" => "alert"} ×
+          = content_tag :span, msg, id: "flash_#{name}"  
+
+    
+    ///
+    ///  Show products list
+    ///..............................................
+         
     .row
       - @products.each do |product|
         .span9.product-list-contain

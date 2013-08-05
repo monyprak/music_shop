@@ -1,5 +1,17 @@
 = render partial: "categories_filter"
 .row
+  .span12
+    ///
+    ///  Alert message after action
+    ///..............................................
+    
+    - flash.each do |name, msg|
+      - if msg.is_a?(String)
+        %div{class: "alert alert-#{name == :notice ? "success" : "error"}"}
+          %a.close{"data-dismiss" => "alert"} ×
+          = content_tag :span, msg, id: "flash_#{name}"  
+
+.row
   - @categories.each do |category|
     .span3.box-padding-bottom
       %h3.box-header= category.name 

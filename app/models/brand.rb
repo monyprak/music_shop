@@ -10,8 +10,9 @@ class Brand < ActiveRecord::Base
 
   has_attached_file :photo, styles: {larg: "218*273"},
                     url: "/images/brands/:id/:style/:basename.:extension",
-                    path: ":rails_root/public/images/brands/:id/:style/:basename.:extension"                        
-
+                    path: ":rails_root/public/images/brands/:id/:style/:basename.:extension",                        
+                    default_url: "/icon/default.jpg"  
+  
   # validates_attachment_presence :photo
   # validates_attachment_size :path_img, less_than: 5.megabytes
   # validates_attachment_content_type :path_img, content_type: ['image/jpeg', 'image/png'] 

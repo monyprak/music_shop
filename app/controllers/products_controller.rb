@@ -45,6 +45,7 @@ class ProductsController < ApplicationController
 
     respond_to do |format|
       if @product.update_attributes(params[:product])
+        # flash[:notice] = "Hello Flash"
         format.html { redirect_to products_path(), notice: 'Product was successfully updated.' }
       else
         format.html { render action: "edit" }
@@ -56,7 +57,7 @@ class ProductsController < ApplicationController
   def destroy
     @product = Product.find(params[:id])
     @product.destroy
-
+    flash[:notice] = "The product has deleted"
     respond_to do |format|
       format.html { redirect_to products_url }
     end

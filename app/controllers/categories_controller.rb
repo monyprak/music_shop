@@ -49,7 +49,14 @@ class CategoriesController < ApplicationController
   def destroy
     @category = Category.find(params[:id])
 
-    @category.destroy if Category.get_products(params[:id]).count == 0
+    # @category.destroy if Category.get_products(params[:id]).count == 0
+    if Category.get_products(params[:id]).count == 0 
+      flash[:notice] = "The category has deleted."
+      @category.destroy    
+    else
+      flash[:error] = "You can not delete this category, because has many products used it."
+    end
+
     respond_to do |format|
       format.html { redirect_to categories_url }
     end

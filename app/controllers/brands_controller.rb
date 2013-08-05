@@ -48,7 +48,13 @@ class BrandsController < ApplicationController
   
   def destroy
     @brand = Brand.find(params[:id])
-    @brand.destroy if Brand.get_products(params[:id]).count == 0
+    # @brand.destroy if Brand.get_products(params[:id]).count == 0
+    if Brand.get_products(params[:id]).count == 0
+      flash[:notice] = "The brand has deleted"
+      @brand.destroy
+    else
+      flash[:error] = "You can not delete this brand, because has many products used it."
+    end 
     respond_to do |format|
       format.html { redirect_to brands_url }
     end
