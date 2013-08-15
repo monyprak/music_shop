@@ -4,8 +4,12 @@ class Product < ActiveRecord::Base
   belongs_to :category
   belongs_to :brand   
 
+  validates :category_id, presence: true
+  validates :brand_id, presence: true
+
   def self.search_product(name)
-    @products = Product.where("name like '%#{name}%'")
+    # @products = Product.where("name like '%#{name}%'")
+    Product.where("name like '%#{name}%'")
   end
 
 

@@ -1,5 +1,4 @@
 
-
 $(document).ready(function(){
 
   ///
@@ -14,11 +13,11 @@ $(document).ready(function(){
     arrTop[3] = "/categories";
   }
 
-  if(arrTop[5] != null){                 //  check url from caregory and brand user define method
+  if(arrTop[5] != null){                 // check url from caregory and brand user define method
     arrTop[3] = "/" + arrTop[5];
   }
 
-  if(arrTop[4] == "top_products"){       //  check url from product user define method
+  if(arrTop[4] == "top_products"){       // check url from product user define method
     arrTop[3] = "/products/" + arrTop[4];
   }
 
@@ -46,6 +45,12 @@ $(document).ready(function(){
         $(element).replaceWith("<span class = 'left-menu-actived' >" + $(element).html() + "</span>");
       }     
   });
+
+
+  //
+  //----------  Validation on field require --------
+  
+  $(".field_with_errors select").css({"color": "red", "border":"1px solid red"});
 
 });
 

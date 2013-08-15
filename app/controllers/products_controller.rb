@@ -10,19 +10,22 @@ class ProductsController < ApplicationController
     @product = Product.new
     @categories = Category.all
     @brands = Brand.all
+    # @product = params[:product]
   end
 
   
   def create
     @product = Product.new(params[:product])
 
-    respond_to do |format|
-      if @product.save
-        format.html { redirect_to products_path(), notice: 'Product was successfully created.' }
-      else
-        format.html { render action: "new" }
-      end
-    end  
+    if @product.save
+      redirect_to products_path(), notice: "Product was successfully created."
+    else
+      # @product = params[:product]
+      # redirect_to new_product_path()
+      @categories = Category.all
+      @brands = Brand.all
+      render action: "new"
+    end
   end
 
   
@@ -43,14 +46,14 @@ class ProductsController < ApplicationController
   def update
     @product= Product.find(params[:id])
 
-    respond_to do |format|
-      if @product.update_attributes(params[:product])
-        # flash[:notice] = "Hello Flash"
-        format.html { redirect_to products_path(), notice: 'Product was successfully updated.' }
-      else
-        format.html { render action: "edit" }
-      end
+    
+    if @product.update_attributes(params[:product])
+      # flash[:notice] = "Hello Flash"
+      redirect_to products_path(), notice: 'Product was successfully updated.'
+    else
+      redirect_to :back
     end
+  
   end
 
   
